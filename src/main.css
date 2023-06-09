@@ -1,0 +1,24 @@
+/*
+ * General element styling
+ *
+ */
+
+ html{
+    height:100%;
+}
+
+
+/*
+ * Canvas styling
+ */
+
+#webGLTest {
+    width: 500px;
+    height: 500px;    
+    border: 1px solid black;
+    display: none;
+}
+
+#fullscreenCancel {
+    display:none;
+}
