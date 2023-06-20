@@ -11,14 +11,3 @@
 /*
  * Canvas styling
  */
-
-#webGLTest {
-    width: 500px;
-    height: 500px;    
-    border: 1px solid black;
-    display: none;
-}
-
-#fullscreenCancel {
-    display:none;
-}

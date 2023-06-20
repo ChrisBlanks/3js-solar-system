@@ -1,7 +1,7 @@
 {
-  "name": "3js-test",
-  "version": "1.0.0",
-  "description": "",
+  "name": "3js_universe",
+  "version": "0.0.1",
+  "description": "Solar system created in 3JS",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "server": "npx vite"
   },
   "keywords": [],
-  "author": "",
+  "author": "Chris Blanks",
   "license": "MIT",
   "dependencies": {
     "three": "^0.152.2"

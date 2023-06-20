@@ -8,7 +8,7 @@ function main(){
     const world = new World(container);
     setupAnimationButtons(world);
     setupFullscreenButton();
-    //To-Do: Setup key events for controlling either cube or camera position
+    //setupClickListener(world,container);
 }
 
 main();
@@ -56,4 +56,17 @@ function setupFullscreenButton(){
           }
     });
     document.body.appendChild(fullScreenButton);
+}
+
+function setupClickListener(world, container){
+    let toggle = false;
+    container.addEventListener('click', () => {
+        if(toggle){
+            world.start();
+            toggle= false;
+        } else{
+            world.stop();
+            toggle=true;
+        }
+    });
 }
