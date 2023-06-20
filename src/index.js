@@ -24,6 +24,13 @@ function setupContainer (){
 }
 
 function setupAnimationButtons(world){
+    const controlDiv = document.createElement('div');
+    controlDiv.id='controlDiv';
+    controlDiv.style.display='flex';
+    controlDiv.style.flexDirection='row';
+    controlDiv.style.justifyContent='center';
+    controlDiv.style.alignItems='center';
+
     const startButton = document.createElement('button');
     const stopButton = document.createElement('button');
 
@@ -38,11 +45,13 @@ function setupAnimationButtons(world){
         world.stop();
     });
 
-    document.body.appendChild(startButton);
-    document.body.appendChild(stopButton);
+    controlDiv.appendChild(startButton);
+    controlDiv.appendChild(stopButton);
+    document.body.appendChild(controlDiv)
 }
 
 function setupFullscreenButton(){
+    const controlDiv = document.getElementById('controlDiv');
     const fullScreenButton = document.createElement('button');
 
     fullScreenButton.innerHTML='Fullscreen Toggle';
@@ -55,7 +64,7 @@ function setupFullscreenButton(){
             document.exitFullscreen();
           }
     });
-    document.body.appendChild(fullScreenButton);
+    controlDiv.appendChild(fullScreenButton);
 }
 
 function setupClickListener(world, container){

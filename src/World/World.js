@@ -1,6 +1,5 @@
 import {createCamera } from './components/camera.js';
-import {createCube } from './components/cube.js';
-import {createLights } from './components/lights.js';
+import {createAmbientLight, createDirectionalLight } from './components/lights.js';
 import {createScene } from './components/scene.js';
 
 import { SolarSytem } from './components/SolarSystem/SolarSystem.js';
@@ -29,7 +28,9 @@ class World {
 
         const solarSystem = new SolarSytem();
 
-        const { directLight, ambientLight} = createLights();
+        //const ambientLight = createAmbientLight(); 
+        const directionalLight = createDirectionalLight(); 
+
         const controls = createControls(camera, renderer.domElement);
         renderer.domElement.style.height="500px";
 
@@ -37,7 +38,10 @@ class World {
         loop.updatetables.push(solarSystem,  camera, controls);
 
         //add objects to scene and setup view
-        scene.add(solarSystem, directLight, ambientLight, createAxesHelper());
+        scene.add(directionalLight);
+        scene.add(createAxesHelper());
+        scene.add(solarSystem);
+        
         container.append(renderer.domElement);
 
         const resizer = new Resizer(container,camera,renderer);

@@ -1,12 +1,12 @@
 import { Group, MathUtils } from "three";
-import { Planet } from "./Planet/Planet";
+import { AstronomicalObject } from "./AstronomicalObject/AstronomicalObject";
 
-//import {};
 
 class SolarSytem extends Group {
     constructor(){
         super();
-        this.add( new Planet('earth'), new Planet('mars'));
+ 
+        this.add( new AstronomicalObject());
     }
 
 
