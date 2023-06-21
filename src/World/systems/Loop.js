@@ -11,12 +11,12 @@ class Loop {
         this.renderer = renderer;
 
         //create array of objects that will be updated in loop
-        this.updatetables = [];
+        this.updateTables = [];
     }
 
     start(){
         this.renderer.setAnimationLoop( () => {
-            this.tick(); //start ticking of updatetables objects
+            this.tick(); //start ticking of updateTables objects
             this.renderer.render(this.scene, this.camera); //render a new frame
         });
     }
@@ -27,7 +27,7 @@ class Loop {
 
     tick(){
         const delta = clock.getDelta(); //call only once to get time since last call
-        for(const object of this.updatetables){
+        for(const object of this.updateTables){
             object.tick(delta);
         }
     }

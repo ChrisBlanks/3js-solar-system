@@ -35,7 +35,7 @@ class World {
         renderer.domElement.style.height="500px";
 
         //add objects to array of objects that can be updated periodically
-        loop.updatetables.push(solarSystem,  camera, controls);
+        loop.updateTables.push(solarSystem,  camera, controls);
 
         //add objects to scene and setup view
         scene.add(directionalLight);

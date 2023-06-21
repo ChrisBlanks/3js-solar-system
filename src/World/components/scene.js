@@ -3,7 +3,7 @@ from "../../../node_modules/three/build/three.module.js";
 
 function createScene(){
     const scene = new Scene;
-    const defaultBGColor = 'skyblue';
+    const defaultBGColor = 'black';
 
     scene.background = new Color(defaultBGColor);
 
