@@ -4,6 +4,8 @@
 Small project leveraging the 3js library in order to render 3D animations of a simplified Solar System. Used some of the code from [discoverthreejs](https://discoverthreejs.com/) as a starting point. Using npm and webpack for dependency 
 management and packaging.
 
+![Image of project](project_render.png)
+
 # Building
 To setup project after cloning, run `npm install` in the top level directory.
 
