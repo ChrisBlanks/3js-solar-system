@@ -1,6 +1,6 @@
 import { World } from "./World/World";
 
-import '../styles/main.css';
+import './main.css';
 
 
 function main(){
