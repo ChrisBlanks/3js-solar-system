@@ -1,22 +1,18 @@
-import { DirectionalLight, HemisphereLight} from "three";
+import { DirectionalLight, HemisphereLight, PointLight} from "three";
 
-function createAmbientLight(){
-    const defaultSkyColor= 'white';
-    const defaultGroundColor= 'darkslategray';
-    const defaultIntensity = 3;
-
-    const ambientLight = new HemisphereLight(defaultSkyColor,defaultGroundColor,defaultIntensity);
-
+function createAmbientLight(colorSky='white', colorGround='darkslategray', intensity=3){
+    const ambientLight = new HemisphereLight(colorSky,colorGround,intensity);
     return ambientLight;
 }
 
-function createDirectionalLight(){
-    const defaultLightColor= 'white';
-    const defaultIntensity = 8;
-    
-    const mainLight = new DirectionalLight(defaultLightColor,defaultIntensity);
-
+function createDirectionalLight(color='white',intensity=8){
+    const mainLight = new DirectionalLight(color,intensity);
     return mainLight;
 }
 
-export {createAmbientLight, createDirectionalLight};
+function createPointLight(color='white',intensity=8){
+    const pointLight= new PointLight(color,intensity);
+    return pointLight;
+}
+
+export {createAmbientLight, createDirectionalLight,createPointLight};

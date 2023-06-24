@@ -1,6 +1,6 @@
 import {createCamera } from './components/camera.js';
-import {createAmbientLight, createDirectionalLight } from './components/lights.js';
 import {createScene } from './components/scene.js';
+import * as lights from './components/lights.js';
 
 import { SolarSytem } from './components/SolarSystem/SolarSystem.js';
 
@@ -19,7 +19,6 @@ let scene;
 let loop;
 
 //To-Do: Display location of camera in space
-//To-Do: Improve lighting
 class World {
     constructor(container){
         //initialize objects
@@ -30,8 +29,9 @@ class World {
 
         const solarSystem = new SolarSytem();
 
-        const directionalLight = createDirectionalLight(); 
-        const ambientLight = createAmbientLight();
+        const directionalLight = lights.createDirectionalLight(); 
+        const ambientLight = lights.createAmbientLight();
+        const pointLight = lights.createPointLight();
 
         const controls = createControls(camera, renderer.domElement);
         renderer.domElement.style.height="500px";
@@ -40,7 +40,7 @@ class World {
         loop.updateTables.push(solarSystem,  camera, controls);
 
         //add objects to scene and setup view
-        scene.add(ambientLight);
+        scene.add(pointLight);
         scene.add(createAxesHelper());
         scene.add(solarSystem);
         
