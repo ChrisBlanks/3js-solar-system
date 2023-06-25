@@ -2,8 +2,13 @@ import { World } from "./World/World";
 
 import './main.css';
 
+function importAll(r) {
+    return r.keys().map(r);
+}
+  
 
 function main(){
+    const images = importAll(require.context('../assets/textures', false, /\.(png|jpe?g|svg)$/));
     const container = setupContainer();
     const world = new World(container);
     setupAnimationButtons(world);

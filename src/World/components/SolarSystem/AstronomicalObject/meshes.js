@@ -36,7 +36,7 @@ const MeshFactory = function(){
         if(meshType.toUpperCase() === "Sun".toUpperCase()){ 
             const sizes = {radius: 10, widthSegs: 16, heightSegs: 16}; //~175.36x ref diameter; too big, so not to scale value used
             const positions = {x: 0, y: 0, z: 0};
-            textureUri = '/assets/textures/2k_sun.jpg';
+            textureUri = 'assets/textures/2k_sun.jpg';
             mesh = createMesh("yellow","SphereGeometry",sizes,positions,null,textureUri,true);
 
             // rotation about y-axis for sun would be its rotational speed, not orbital speed
@@ -49,7 +49,7 @@ const MeshFactory = function(){
                                 y: 0, 
                                 z: (0.4* DISTANCE_SCALE) + OFFSET
                             }; //0.4 AU
-            textureUri = '/assets/textures/2k_mercury.jpg';
+            textureUri = 'assets/textures/2k_mercury.jpg';
             mesh = createMesh("gray","SphereGeometry",sizes,positions,null,textureUri,false);
             
             // (107,082 mph / 66,615 mph) = 1.61
@@ -61,7 +61,7 @@ const MeshFactory = function(){
                 y: 0, 
                 z: (0.7* DISTANCE_SCALE) + OFFSET
             }; //0.7 AU
-            textureUri = '/assets/textures/2k_venus_surface.jpg';
+            textureUri = 'assets/textures/2k_venus_surface.jpg';
             mesh = createMesh("tan","SphereGeometry",sizes,positions,null,textureUri,false);
 
             // (78,337 mph / 66,615 mph) = 1.176
@@ -73,7 +73,7 @@ const MeshFactory = function(){
                 y: 0, 
                 z: (1* DISTANCE_SCALE) + OFFSET
             }; // 1 AU
-            textureUri = '/assets/textures/2k_earth_daymap.jpg';
+            textureUri = 'assets/textures/2k_earth_daymap.jpg';
             mesh = createMesh("blue","SphereGeometry",sizes,positions,null,textureUri,false);
 
             rotationAnimationSpeeds.yRadPerS = MathUtils.degToRad(EARTH_ORBIT_SPEED);
@@ -84,7 +84,7 @@ const MeshFactory = function(){
                 y: 0, 
                 z: (1.5* DISTANCE_SCALE) + OFFSET
             }; //1.5 AU
-            textureUri = '/assets/textures/2k_mars.jpg';
+            textureUri = 'assets/textures/2k_mars.jpg';
             mesh = createMesh("burlywood","SphereGeometry",sizes,positions,null,textureUri,false);
             // (53,853 mph / 66,615 mph) = 0.81
             rotationAnimationSpeeds.yRadPerS = MathUtils.degToRad(0.81* EARTH_ORBIT_SPEED);
@@ -95,7 +95,7 @@ const MeshFactory = function(){
                 y: 0, 
                 z: (5.2* DISTANCE_SCALE) + OFFSET
             }; //5.2 AU
-            textureUri = '/assets/textures/2k_jupiter.jpg';
+            textureUri = 'assets/textures/2k_jupiter.jpg';
             mesh = createMesh("beige","SphereGeometry",sizes,positions,null,textureUri,false);
 
             // (29,236 mph / 66,615 mph) = 0.44
@@ -107,7 +107,7 @@ const MeshFactory = function(){
                 y: 0, 
                 z: (9.5* DISTANCE_SCALE) + OFFSET
             }; //9.5 AU
-            textureUri = '/assets/textures/2k_saturn.jpg';
+            textureUri = 'assets/textures/2k_saturn.jpg';
             mesh = createMesh("moccasin","SphereGeometry",sizes,positions,null,textureUri,false);
 
             // (21,675 mph / 66,615 mph) = 0.325
@@ -119,7 +119,7 @@ const MeshFactory = function(){
                 y: 0, 
                 z: (19.2* DISTANCE_SCALE) + OFFSET
             }; //19.2 AU
-            textureUri = '/assets/textures/2k_uranus.jpg';
+            textureUri = 'assets/textures/2k_uranus.jpg';
             mesh = createMesh("cyan","SphereGeometry",sizes,positions,null,textureUri,false);
 
             rotationAnimationSpeeds.zRadPerS = -1 * MathUtils.degToRad(30); //rolls on its side
@@ -132,7 +132,7 @@ const MeshFactory = function(){
                 y: 0, 
                 z: (30.1* DISTANCE_SCALE) + OFFSET
             }; //30.1 AU
-            textureUri = '/assets/textures/2k_neptune.jpg';
+            textureUri = 'assets/textures/2k_neptune.jpg';
             mesh = createMesh("cornflowerblue","SphereGeometry",sizes,positions,null,textureUri,false);
 
             // (12,146 mph / 66,615 mph) = 0.182
