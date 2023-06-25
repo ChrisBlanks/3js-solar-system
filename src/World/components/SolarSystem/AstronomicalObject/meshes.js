@@ -3,10 +3,8 @@ import { createGeometries } from "./geometries";
 
 import { Mesh, MathUtils } from "three";
 
-const radiansPerSecond = MathUtils.degToRad(30);
 const textureBaseUri = window.location + 'assets/textures/';
 
-//To-Do: Need to figure out how to specify a texture per planet
 //To-Do: Certain planets have rings, so they'll need multiple meshes
 const MeshFactory = function(){
     this.createMesh = function(meshType){
