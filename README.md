@@ -3,6 +3,9 @@
 
 Small project leveraging the 3js library in order to render 3D animations of a simplified Solar System. Used some of the code from [discoverthreejs](https://discoverthreejs.com/) as a starting point. Used some of the textures from [solarsystemscope](https://www.solarsystemscope.com/textures/). Using npm and webpack for dependency management and packaging.
 
+Project can be viewed in GithubPages page:
+[Live Demo](https://chrisblanks.github.io/3js-solar-system/)
+
 Limitations:
 - Scaling of astronomical objects is not accurate
 - Rotational speed and orbit around the sun for astronomical objects
