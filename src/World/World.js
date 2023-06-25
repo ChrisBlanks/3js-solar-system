@@ -42,7 +42,7 @@ class World {
 
         //add objects to scene and setup view
         scene.add(pointLight);
-        scene.add(createAxesHelper());
+        //scene.add(createAxesHelper());
         scene.add(solarSystem);
         
         container.append(renderer.domElement);
