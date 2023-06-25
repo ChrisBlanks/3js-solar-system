@@ -19,6 +19,7 @@ let scene;
 let loop;
 
 //To-Do: Display location of camera in space
+//To-Do: Add controls for following an AO
 class World {
     constructor(container){
         //initialize objects
@@ -59,6 +60,10 @@ class World {
 
     stop(){
         loop.stop();
+    }
+
+    togglePause(){
+        loop.togglePause();
     }
 
 }

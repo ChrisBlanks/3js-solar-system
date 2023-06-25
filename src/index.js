@@ -33,9 +33,11 @@ function setupAnimationButtons(world){
 
     const startButton = document.createElement('button');
     const stopButton = document.createElement('button');
+    const renderButton = document.createElement('button');
 
     startButton.innerHTML='Start Animation';
     stopButton.innerHTML='Stop Animation';
+    renderButton.innerHTML = 'Render Frame';
 
     startButton.addEventListener('click', () => {
         world.start();
@@ -45,8 +47,13 @@ function setupAnimationButtons(world){
         world.stop();
     });
 
+    renderButton.addEventListener('click', () => {
+        world.render();
+    });
+
     controlDiv.appendChild(startButton);
     controlDiv.appendChild(stopButton);
+    controlDiv.appendChild(renderButton);
     document.body.appendChild(controlDiv)
 }
 

@@ -10,19 +10,28 @@ class Loop {
         this.scene = scene;
         this.renderer = renderer;
 
+        this.isPaused = false;
+
         //create array of objects that will be updated in loop
         this.updateTables = [];
     }
 
     start(){
         this.renderer.setAnimationLoop( () => {
-            this.tick(); //start ticking of updateTables objects
-            this.renderer.render(this.scene, this.camera); //render a new frame
+            if(this.isPaused == false){
+                this.tick(); //start ticking of updateTables objects
+                this.renderer.render(this.scene, this.camera); //render a new frame
+            }
+
         });
     }
 
     stop(){
         this.renderer.setAnimationLoop(null);
+    }
+
+    togglePause(){
+        this.isPaused = !this.isPaused;
     }
 
     tick(){

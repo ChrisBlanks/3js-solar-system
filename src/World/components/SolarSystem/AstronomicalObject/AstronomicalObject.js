@@ -1,7 +1,6 @@
 import { MeshFactory } from "./meshes";
-import { Object3D, MathUtils } from "three";
+import { Object3D, Group } from "three";
 
-const radiansPerSecond = MathUtils.degToRad(30);
 
 class AstronomicalObject extends Object3D {
 
@@ -10,18 +9,26 @@ class AstronomicalObject extends Object3D {
 
         this.name = name;
         var astroObjFactory = new MeshFactory();
-        this.mesh = astroObjFactory.createMesh(this.name);
+        const generatedMesh = astroObjFactory.createMesh(this.name);
+        
+        this.mesh = generatedMesh.mesh;
+        this.rotationAnimationSpeeds = generatedMesh.rotationAnimationSpeeds;
+
         this.add(this.mesh);
     }
 
-
+//To-Do: 
+// some planets rotate faster than others
+// uranus rotates/spins on its side like a ball while the others spin like a top
     tick(delta){
-        //rotate object ZXY order by 30 deg every second (delta is a partial second)
-        //this.rotation.z += radiansPerSecond * delta;
-        //this.rotation.x += radiansPerSecond * delta;
+        //rotate AO about global coordinate space 
+        //this.rotation.z += this.rotationAnimationSpeeds.zRadPerS * delta;
+        this.rotation.x += this.rotationAnimationSpeeds.xRadPerS * delta;
+        this.rotation.y += this.rotationAnimationSpeeds.yRadPerS * delta; 
 
-        //To-Do: Figure out rotation speed based on factory value
-        this.rotation.y += radiansPerSecond * delta;
+        //rotate mesh about its axis
+        //this.mesh.rotation.y += this.rotationAnimationSpeeds.yRadPerS * delta;
+        this.mesh.rotation.z += this.rotationAnimationSpeeds.zRadPerS * delta;
     }
 
 }

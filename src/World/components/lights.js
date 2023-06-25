@@ -10,8 +10,8 @@ function createDirectionalLight(color='white',intensity=8){
     return mainLight;
 }
 
-function createPointLight(color='white',intensity=8){
-    const pointLight= new PointLight(color,intensity);
+function createPointLight(color='white',intensity=1,distance=0){
+    const pointLight= new PointLight(color,intensity,distance); //0 distance = infinite
     return pointLight;
 }
 

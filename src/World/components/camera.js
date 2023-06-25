@@ -1,5 +1,4 @@
-import { PerspectiveCamera} 
-from "../../../node_modules/three/build/three.module.js";
+import { PerspectiveCamera} from "three";
 
 
 function createCamera(){
