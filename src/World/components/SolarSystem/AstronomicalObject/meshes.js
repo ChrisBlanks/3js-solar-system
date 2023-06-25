@@ -39,7 +39,9 @@ const MeshFactory = function(){
             textureUri = '/assets/textures/2k_sun.jpg';
             mesh = createMesh("yellow","SphereGeometry",sizes,positions,null,textureUri,true);
 
-            rotationAnimationSpeeds.yRadPerS = MathUtils.degToRad(30);
+            // rotation about y-axis for sun would be its rotational speed, not orbital speed
+            // (4,467 mph / 66,615 mph) = 0.0671
+            rotationAnimationSpeeds.yRadPerS = MathUtils.degToRad(0.0671*EARTH_ORBIT_SPEED);
         } else if(meshType.toUpperCase() === "Mercury".toUpperCase()){ 
             const sizes = {radius: 0.38/2, widthSegs: 16, heightSegs: 16}; //~.38x ref
             const positions = {
